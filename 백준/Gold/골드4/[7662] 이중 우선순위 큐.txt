@@ -1,0 +1,30 @@
+import heapq
+import sys
+input = sys.stdin.readline
+
+T=int(input())
+for i in range(T):
+    lst=[]
+    q=int(input())
+    for j in range(q):
+        tmp=list(input().split())
+        if(tmp[0]=='I'):
+            heapq.heappush(lst,int(tmp[1]))
+        else:
+            if (lst):
+                if(int(tmp[1])==1):
+                    lst = [-x for x in lst]
+                    heapq.heapify(lst)
+                    heapq.heappop(lst)
+                    lst = [-x for x in lst]
+                    heapq.heapify(lst)
+                else:
+                    heapq.heappop(lst)
+            else:
+                continue
+        #print(lst)
+    if (lst):
+        print(max(lst),min(lst),end=" ")
+        print()
+    else:
+        print("EMPTY")
