@@ -24,12 +24,12 @@ for _ in range(N):
     tmp=list(input().rstrip())
     picture.append(tmp)
 
-plist = copy.deepcopy(picture)
+plist = copy.deepcopy(picture) #깊은 복사
 
 for i in range(N):
     for j in range(N):
         if(plist[i][j]=="G"):
-            plist[i][j]="R"
+            plist[i][j]="R"     #적록색맹이 있는 환자들을 위한 배열
 
 cnt=[0]*2
 for i in range(N):
